@@ -19,6 +19,7 @@ using System;
 using AlphaTab.Model;
 using AlphaTab.Platform;
 using AlphaTab.Rendering.Utils;
+using AlphaTab.Platform.Model;
 
 namespace AlphaTab.Rendering.Glyphs
 {
@@ -51,6 +52,8 @@ namespace AlphaTab.Rendering.Glyphs
 
         public override void Paint(float cx, float cy, ICanvas canvas)
         {
+           
+
             if (EndNote == null) return;
 
             var startNoteRenderer =

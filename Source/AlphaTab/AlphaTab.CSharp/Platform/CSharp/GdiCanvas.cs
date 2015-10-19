@@ -330,7 +330,9 @@ namespace AlphaTab.Platform.CSharp
             }
 
             SvgRenderer glyph = new SvgRenderer(MusicFont.SymbolLookup[symbol], scale, scale);
+            
             glyph.Paint(x, y, this);
+            
         }
     }
 }

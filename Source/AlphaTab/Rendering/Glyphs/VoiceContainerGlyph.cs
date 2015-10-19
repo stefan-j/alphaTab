@@ -81,6 +81,7 @@ namespace AlphaTab.Rendering.Glyphs
 
         public override void AddGlyph(Glyph g)
         {
+            
             g.X = BeatGlyphs.Count == 0
                 ? 0
                 : BeatGlyphs[BeatGlyphs.Count - 1].X + BeatGlyphs[BeatGlyphs.Count - 1].Width;
@@ -108,8 +109,10 @@ namespace AlphaTab.Rendering.Glyphs
         {
             //canvas.Color = new Color((byte) Random.Next(255), (byte) Random.Next(255), (byte) Random.Next(255), 128);
             //canvas.FillRect(cx + X, cy + Y, Width, 100);
+            
             for (int i = 0, j = BeatGlyphs.Count; i < j; i++)
             {
+                
                 BeatGlyphs[i].Paint(cx + X, cy + Y, canvas);
             }
         }

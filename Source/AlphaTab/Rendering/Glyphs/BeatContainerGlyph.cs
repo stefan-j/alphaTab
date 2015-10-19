@@ -143,22 +143,31 @@ namespace AlphaTab.Rendering.Glyphs
             // canvas.Color = new Color(0, 0, 0);
             // canvas.FillText(Beat.Voice.Index + ":" + Beat.Index, cx + X, cy + Y + 15 * Beat.Voice.Index);
 
+           
+
             PreNotes.Paint(cx + X, cy + Y, canvas);
             //canvas.Color = new Color(200, 0, 0, 100);
             //canvas.FillRect(cx + X + PreNotes.X, cy + Y + PreNotes.Y, PreNotes.Width, 10);
+
+            
 
             OnNotes.Paint(cx + X, cy + Y, canvas);
             //canvas.Color new Color(0, 200, 0, 100);
             //canvas.FillRect(cx + X + OnNotes.X, cy + Y + OnNotes.Y + 10, OnNotes.Width, 10);
 
+            
+
             PostNotes.Paint(cx + X, cy + Y, canvas);
             //canvas.Color = new Color(0, 0, 200, 100);
             //canvas.FillRect(cx + X + PostNotes.X, cy + Y + PostNotes.Y + 20, PostNotes.Width, 10);
 
+           
+            
             for (int i = 0, j = Ties.Count; i < j; i++)
             {
                 var t = Ties[i];
                 t.Renderer = Renderer;
+                
                 t.Paint(cx, cy + Y, canvas);
             }
         }

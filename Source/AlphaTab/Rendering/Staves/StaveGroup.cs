@@ -238,6 +238,8 @@ namespace AlphaTab.Rendering.Staves
 
         public void Paint(float cx, float cy, ICanvas canvas)
         {
+            
+
             for (int i = 0, j = _allStaves.Count; i < j; i++)
             {
                 _allStaves[i].Paint(cx + X, cy + Y, canvas);
@@ -264,6 +266,7 @@ namespace AlphaTab.Rendering.Staves
                     var acooladeX = cx + X + _firstStaveInAccolade.X;
 
                     canvas.Color = res.BarSeperatorColor;
+      
 
                     canvas.BeginPath();
                     canvas.MoveTo(acooladeX, firstStart);

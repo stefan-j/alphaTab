@@ -62,11 +62,17 @@ namespace AlphaTab.Rendering.Glyphs
         public override void Paint(float cx, float cy, ICanvas canvas)
         {
             if (Glyphs == null || Glyphs.Count == 0) return;
+            var prevColor = canvas.Color;
             for (int i = 0, j = Glyphs.Count; i < j; i++)
             {
                 var g = Glyphs[i];
+                if(g.IsHighlighted)
+                {
+                    canvas.Color = AlphaTab.Platform.Model.Color.Red;
+                }
                 g.Renderer = Renderer;
                 g.Paint(cx + X, cy + Y, canvas);
+                canvas.Color = prevColor;
             }
         }
     }

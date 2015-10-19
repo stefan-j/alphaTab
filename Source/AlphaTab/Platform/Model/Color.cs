@@ -21,6 +21,8 @@ namespace AlphaTab.Platform.Model
 {
     public class Color
     {
+        public static Color Red = new Color(255, 0, 0);
+
         public Color(byte r, byte g, byte b, byte a = 0xFF)
         {
             Raw = (a << 24) | (r << 16) | (g << 8) | b;

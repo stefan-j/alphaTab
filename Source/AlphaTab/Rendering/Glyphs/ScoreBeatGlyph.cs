@@ -225,6 +225,8 @@ namespace AlphaTab.Rendering.Glyphs
             var sr = (ScoreBarRenderer)Renderer;
             var noteHeadGlyph = CreateNoteHeadGlyph(n);
 
+            noteHeadGlyph.IsHighlighted = n.IsHighlighted;
+
             // calculate y position
             var line = sr.GetNoteLine(n);
 

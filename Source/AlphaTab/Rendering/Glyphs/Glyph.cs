@@ -32,10 +32,13 @@ namespace AlphaTab.Rendering.Glyphs
         public float Width { get; set; }
         public BarRendererBase Renderer { get; set; }
 
+        public bool IsHighlighted { get; set; }
+
         public Glyph(float x, float y)
         {
             X = x;
             Y = y;
+            IsHighlighted = false;
         }
 
         public virtual void ApplyGlyphSpacing(float spacing)

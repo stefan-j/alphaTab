@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public class Class1
+    
+    public static class Class1
     {
+        public static Random random = new Random();
     }
 }

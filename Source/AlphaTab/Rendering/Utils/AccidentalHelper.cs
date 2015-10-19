@@ -201,6 +201,8 @@ namespace AlphaTab.Rendering.Utils
 
         public int GetNoteLine(Note n)
         {
+            if (_appliedScoreLines.Count == 0)
+                return 4;
             return _appliedScoreLines[GetNoteId(n)];
         }
     }

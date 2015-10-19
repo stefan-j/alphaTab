@@ -159,12 +159,15 @@ namespace AlphaTab.Rendering
 
         private void AddGlyph(FastList<Glyph> c, Glyph g)
         {
+
+         
             IsEmpty = false;
             g.X = c.Count == 0 ? 0 : (c[c.Count - 1].X + c[c.Count - 1].Width);
             g.Index = c.Count;
             g.Renderer = this;
             g.DoLayout();
             c.Add(g);
+
         }
 
         protected void AddPreBeatGlyph(Glyph g)
@@ -174,6 +177,7 @@ namespace AlphaTab.Rendering
 
         protected void AddBeatGlyph(BeatContainerGlyph g)
         {
+            
             GetOrCreateVoiceContainer(g.Beat.Voice.Index).AddGlyph(g);
         }
 
@@ -320,20 +324,25 @@ namespace AlphaTab.Rendering
         {
             PaintBackground(cx, cy, canvas);
 
+           
+
             var glyphStartX = PreBeatGlyphStart;
             for (int i = 0, j = _preBeatGlyphs.Count; i < j; i++)
             {
                 var g = _preBeatGlyphs[i];
+                
                 g.Paint(cx + X + glyphStartX, cy + Y, canvas);
             }
 
             glyphStartX = BeatGlyphsStart;
+            //IMPORTANT
             Std.Foreach(_voiceContainers.Values, c => c.Paint(cx + X + glyphStartX, cy + Y, canvas));
 
             glyphStartX = Width - PostBeatGlyphsWidth;
             for (int i = 0, j = _postBeatGlyphs.Count; i < j; i++)
             {
                 var g = _postBeatGlyphs[i];
+                
                 g.Paint(cx + X + glyphStartX, cy + Y, canvas);
             }
         }

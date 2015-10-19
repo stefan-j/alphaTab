@@ -193,6 +193,7 @@ namespace AlphaTab.Rendering.Staves
 
         public void Paint(float cx, float cy, ICanvas canvas)
         {
+            
             if (Height == 0) return;
             for (int i = 0, j = BarRenderers.Count; i < j; i++)
             {

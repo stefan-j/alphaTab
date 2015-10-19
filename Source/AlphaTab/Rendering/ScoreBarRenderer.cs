@@ -154,6 +154,7 @@ namespace AlphaTab.Rendering
 
         public override void Paint(float cx, float cy, ICanvas canvas)
         {
+
             base.Paint(cx, cy, canvas);
             PaintBeams(cx, cy, canvas);
             PaintTuplets(cx, cy, canvas);
@@ -174,6 +175,7 @@ namespace AlphaTab.Rendering
 
         private void PaintBeams(float cx, float cy, ICanvas canvas)
         {
+           
             for (int i = 0, j = _helpers.BeamHelpers.Count; i < j; i++)
             {
                 var v = _helpers.BeamHelpers[i];
@@ -201,6 +203,7 @@ namespace AlphaTab.Rendering
 
         private void PaintTupletHelper(float cx, float cy, ICanvas canvas, TupletHelper h)
         {
+            
             var res = Resources;
             var oldAlign = canvas.TextAlign;
             canvas.TextAlign = TextAlign.Center;
@@ -278,7 +281,7 @@ namespace AlphaTab.Rendering
                     canvas.LineTo(cx + X + startX, (int)(cy + Y + startY - offset - size));
                     canvas.LineTo(cx + X + offset1X, (int)(cy + Y + offset1Y - offset - size));
                     canvas.Stroke();
-
+                    
                     canvas.BeginPath();
                     canvas.MoveTo(cx + X + offset2X, (int)(cy + Y + offset2Y - offset - size));
                     canvas.LineTo(cx + X + endX, (int)(cy + Y + endY - offset - size));
@@ -662,6 +665,7 @@ namespace AlphaTab.Rendering
                 container.OnNotes = new ScoreBeatGlyph();
                 ((ScoreBeatGlyph)container.OnNotes).BeamingHelper = _helpers.BeamHelperLookup[v.Index][b.Index];
                 container.PostNotes = new ScoreBeatPostNotesGlyph();
+
                 AddBeatGlyph(container);
             }
         }
@@ -699,7 +703,7 @@ namespace AlphaTab.Rendering
         protected override void PaintBackground(float cx, float cy, ICanvas canvas)
         {
             var res = Resources;
-
+            
             //var c = new Color((byte)Random.Next(255),
             //                  (byte)Random.Next(255),
             //                  (byte)Random.Next(255),

@@ -33,7 +33,14 @@ namespace AlphaTab.Rendering.Glyphs
 
         public override void Paint(float cx, float cy, ICanvas canvas)
         {
+            var prevColor = canvas.Color;
+            if(this.IsHighlighted)
+            {
+                canvas.Color = Platform.Model.Color.Red;
+            }
+            //canvas.Color = Platform.Model.Color.Red;
             canvas.FillMusicFontSymbol(cx + X, cy + Y, _scale*Scale, _symbol);
+            canvas.Color = prevColor;
         }
     }
 }

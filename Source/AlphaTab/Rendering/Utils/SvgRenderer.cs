@@ -55,6 +55,7 @@ namespace AlphaTab.Rendering.Utils
             _currentY = startY;
             canvas.BeginPath();
 
+
             for (int i = 0, j = _svg.Commands.Count; i < j; i++)
             {
                 ParseCommand(startX, startY, canvas, _svg.Commands[i]);

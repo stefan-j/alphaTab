@@ -45,12 +45,19 @@ namespace AlphaTab.Wpf.Gdi
 
         }
 
+        public void SetHighlight(int index, bool isHighlighted)
+        {
+            
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var comp = GeneticMIDI.Representation.Composition.LoadFromMIDI(@"C:\Users\1gn1t0r\Documents\git\GeneticMIDI\GeneticMIDI\bin\Debug\test\harry.mid");
             var mel = comp.Tracks[0].GetMainSequence() as GeneticMIDI.Representation.MelodySequence;
             Score score = new Score();
             Track t = new Track();
+
+            var pc = t.IsPercussion;
 
             MasterBar mb = new MasterBar();
             score.AddMasterBar(mb);

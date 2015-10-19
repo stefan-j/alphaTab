@@ -66,5 +66,6 @@ namespace AlphaTab.Platform
         void LineTo(float x, float y);
         void BezierCurveTo(float cp1x, float cp1y, float cp2x, float cp2y, float x, float y);
         void QuadraticCurveTo(float cpx, float cpy, float x, float y);
+        Color Color { get; set; }
     }
 }

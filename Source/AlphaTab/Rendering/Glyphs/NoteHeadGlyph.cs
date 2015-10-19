@@ -32,6 +32,7 @@ namespace AlphaTab.Rendering.Glyphs
         {
             _isGrace = isGrace;
             _duration = duration;
+            
         }
 
         public override void DoLayout()

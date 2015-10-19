@@ -123,6 +123,8 @@ namespace AlphaTab.Model
         public int Octave { get; set; }
         public int Tone { get; set; }
 
+        public bool IsHighlighted { get; set; }
+
         public int StringTuning
         {
             get
