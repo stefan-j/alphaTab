@@ -85,13 +85,13 @@ namespace AlphaTab.Platform.CSharp.Wpf
         {
             SnapsToDevicePixels = true;
             var settings = Settings.Defaults;
-            settings.Engine = "wpf";
+            settings.Engine = "gdi";
             settings.Layout.Mode = "horizontal";
             Settings = settings;
 
             PartialResults = new ObservableCollection<ImageSource>();
             _renderer = new ScoreRenderer(settings, this);
-        
+            
             _renderer.PreRender += () =>
             {
                 lock (this)

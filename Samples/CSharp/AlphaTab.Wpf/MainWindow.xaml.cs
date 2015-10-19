@@ -40,7 +40,8 @@ namespace AlphaTab.Wpf.Gdi
             // create a our viewmodel for databinding
             viewModel = new MainViewModel(new DialogService(), new ErrorService());
             DataContext = viewModel;
-
+            
+            
 
         }
 
