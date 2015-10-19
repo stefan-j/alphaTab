@@ -55,12 +55,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Source\AlphaTab.CSharp\AlphaTab.CSharp.csproj">
-      <Project>{aba04ebe-36b2-469d-a025-16ba6131818e}</Project>
-      <Name>AlphaTab.CSharp</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

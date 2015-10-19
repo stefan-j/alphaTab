@@ -21,6 +21,9 @@
                 <Button Command="{Binding ShowScoreInfoCommand}" ToolTip="Show Score Info" Style="{StaticResource ToolbarButtonStyle}">
                     <Image Source="Images\32\information.png" Width="24" Height="24" />
                 </Button>
+                <Button Click="Button_Click">
+                    asd
+                </Button>
             </controls:ToolBarCustom>
         </ToolBarTray>
 

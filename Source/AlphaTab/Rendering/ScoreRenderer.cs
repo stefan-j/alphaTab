@@ -69,6 +69,9 @@ namespace AlphaTab.Rendering
                 {
                     Layout = Environment.LayoutEngines[Settings.Layout.Mode](this);
                 }
+               // Layout.Width = 10000;
+                //Layout.Height = 100;
+
                 Layout.PartialRenderFinished += OnPartialRenderFinished;
                 _currentLayoutMode = Settings.Layout.Mode;
             }
@@ -114,12 +117,14 @@ namespace AlphaTab.Rendering
         private void LayoutAndRender()
         {
             Layout.DoLayoutAndRender();
-            Layout.RenderAnnotation();
+            //Layout.RenderAnnotation();
             OnRenderFinished(new RenderFinishedEventArgs
             {
                 TotalHeight = Layout.Height,
                 TotalWidth = Layout.Width
             });
+
+
             OnPostRenderFinished();
         }
 
@@ -150,6 +155,8 @@ namespace AlphaTab.Rendering
         {
             Action handler = PostRenderFinished;
             if (handler != null) handler();
+
+            
         }
 
         public BoundingsLookup BuildBoundingsLookup()

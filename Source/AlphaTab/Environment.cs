@@ -57,26 +57,28 @@ namespace AlphaTab
 
             // default staves 
             StaveFactories["marker"] = l => new EffectBarRendererFactory(new MarkerEffectInfo());
+            StaveFactories["score"] = l => new ScoreBarRendererFactory();
             //staveFactories.set("triplet-feel", functionl { return new EffectBarRendererFactory(new TripletFeelEffectInfo()); });
             StaveFactories["tempo"] = l => new EffectBarRendererFactory(new TempoEffectInfo());
-            StaveFactories["text"] = l => new EffectBarRendererFactory(new TextEffectInfo());
-            StaveFactories["chords"] = l => new EffectBarRendererFactory(new ChordsEffectInfo());
+
+     //       StaveFactories["chords"] = l => new EffectBarRendererFactory(new ChordsEffectInfo());
             StaveFactories["trill"] = l => new EffectBarRendererFactory(new TrillEffectInfo());
-            StaveFactories["beat-vibrato"] = l => new EffectBarRendererFactory(new BeatVibratoEffectInfo());
-            StaveFactories["note-vibrato"] = l => new EffectBarRendererFactory(new NoteVibratoEffectInfo());
-            StaveFactories["alternate-endings"] = l => new AlternateEndingsBarRendererFactory();
-            StaveFactories["score"] = l => new ScoreBarRendererFactory();
-            StaveFactories["crescendo"] = l => new EffectBarRendererFactory(new CrescendoEffectInfo());
-            StaveFactories["dynamics"] = l => new EffectBarRendererFactory(new DynamicsEffectInfo());
-            StaveFactories["tap"] = l => new EffectBarRendererFactory(new TapEffectInfo());
-            StaveFactories["fade-in"] = l => new EffectBarRendererFactory(new FadeInEffectInfo());
-            StaveFactories["let-ring"] = l => new EffectBarRendererFactory(new LetRingEffectInfo());
+       //   StaveFactories["text"] = l => new EffectBarRendererFactory(new TextEffectInfo());
+                StaveFactories["beat-vibrato"] = l => new EffectBarRendererFactory(new BeatVibratoEffectInfo());
+                StaveFactories["note-vibrato"] = l => new EffectBarRendererFactory(new NoteVibratoEffectInfo());
+                StaveFactories["alternate-endings"] = l => new AlternateEndingsBarRendererFactory();
+            
+                StaveFactories["crescendo"] = l => new EffectBarRendererFactory(new CrescendoEffectInfo());
+                StaveFactories["dynamics"] = l => new EffectBarRendererFactory(new DynamicsEffectInfo());
+                StaveFactories["tap"] = l => new EffectBarRendererFactory(new TapEffectInfo());
+                StaveFactories["fade-in"] = l => new EffectBarRendererFactory(new FadeInEffectInfo());
+       //     StaveFactories["let-ring"] = l => new EffectBarRendererFactory(new LetRingEffectInfo());
             StaveFactories["palm-mute"] = l => new EffectBarRendererFactory(new PalmMuteEffectInfo());
-            StaveFactories["tab"] = l => new TabBarRendererFactory();
+         //   StaveFactories["tab"] = l => new TabBarRendererFactory();
             StaveFactories["pick-stroke"] = l => new EffectBarRendererFactory(new PickStrokeEffectInfo());
             StaveFactories["rhythm-up"] = l => new RhythmBarRendererFactory(BeamDirection.Down);
             StaveFactories["rhythm-down"] = l => new RhythmBarRendererFactory(BeamDirection.Up);
-            // staveFactories.set("fingering", functionl { return new EffectBarRendererFactory(new FingeringEffectInfo()); });   
+
         }
     }
 }

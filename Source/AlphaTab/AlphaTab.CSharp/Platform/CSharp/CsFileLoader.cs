@@ -15,38 +15,31 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library.
  */
+
 using System;
 using System.IO;
-using AlphaTab.Audio.Generator;
-using AlphaTab.Audio.Model;
-using AlphaTab.Importer;
-using AlphaTab.IO;
-using AlphaTab.Model;
 
-namespace AlphaTab.MidiDump
+namespace AlphaTab.Platform.CSharp
 {
-    class Program
+    /// <summary>
+    /// This file loader loads binary files using the native apis
+    /// </summary>
+    public class CsFileLoader : IFileLoader
     {
-        static void Main(string[] args)
+        public byte[] LoadBinary(string path)
         {
-            if (args.Length != 1)
+            return File.ReadAllBytes(path);
+        }
+
+        public void LoadBinaryAsync(string path, Action<byte[]> success, Action<Exception> error)
+        {
+            try
             {
-                Console.WriteLine("Usage AlphaTab.MidiDump.exe Path");
-                return;
+                success(LoadBinary(path));
             }
-
-            // load score
-            Score score = ScoreLoader.LoadScore(args[0]);
-
-
-            // generate midi
-            MidiFile file = MidiFileGenerator.GenerateMidiFile(score);
-
-            // write midi file
-            string path = Path.ChangeExtension(args[0], "mid");
-            using (var fs = new StreamWrapper(File.OpenWrite(path)))
+            catch (Exception e)
             {
-                file.WriteTo(fs);
+                error(e);
             }
         }
     }

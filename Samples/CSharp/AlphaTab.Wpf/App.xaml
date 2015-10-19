@@ -5,7 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AlphaTab;component/Platform/CSharp/Wpf/Templates.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/AlphaTab;component/AlphaTab.CSharp/Platform/CSharp/Wpf/Templates.xaml"/>
                 <ResourceDictionary>
                     <Style TargetType="Button" x:Key="ToolbarButtonStyle">
                         <Style.Triggers>
@@ -19,3 +19,5 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
+<!---                <ResourceDictionary Source="pack://application,,,/AlphaTab;component/Platform/CSharp/Wpf/Templates.xaml">
+    </ResourceDictionary> -->
